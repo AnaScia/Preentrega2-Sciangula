@@ -1,5 +1,11 @@
-function ItemListContainer() {
-  // Incluye aquí el rendering de algún texto o título provisional que luego reemplazaremos por nuestro catálogo
+import PropTypes from "prop-types";
+
+function ItemListContainer({greeting}) {
+  return <h2>{greeting}</h2>;
 }
 
 export default ItemListContainer;
+
+ItemListContainer.propTypes = {
+  greeting: PropTypes.string,
+};
