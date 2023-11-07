@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/itemCount.css";
 import logo1 from "../img/minus.svg"
 import logo2 from "../img/plus.svg"
 import PropTypes from 'prop-types'
