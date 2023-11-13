@@ -1,25 +1,44 @@
-import PropTypes from "prop-types";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-function ItemListContainer({ greeting }) {
+function ItemListContainer() {
+  const [items, setItems] = useState([]);
 
-  const onAdd= (quantity) => {
-    console.log(quantity);
-  }
+  const { categoryId } = useParams();
 
+  useEffect(() => {
+    const promiseData = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const productsFile = "/public/products.json";
+          fetch(productsFile)
+            .then((response) => response.json())
+            .then((data) => {
+              resolve(data);
+            });
+        }, 2000);
+      });
+    };
+
+    promiseData().then((data) => {
+      if (categoryId) {
+        const filterProducts = data.filter((p) => p.category === categoryId);
+        setItems(filterProducts);
+      } else {
+        setItems(data);
+      }
+    });
+  }, [categoryId]);
   return (
     <>
-      <h2>{greeting}</h2>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>
-      <ItemCount stock={3} initial={1} onAdd={onAdd}></ItemCount>
-      <ItemList></ItemList>
+      {items.length == 0 ? (
+        <p> Cargando..</p>
+      ) : (
+        <ItemList items={items}></ItemList>
+      )}
     </>
   );
 }
 
 export default ItemListContainer;
-
-ItemListContainer.propTypes = {
-  greeting: PropTypes.string,
-};
