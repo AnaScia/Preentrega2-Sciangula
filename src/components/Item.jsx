@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Item = ({ item }) => {
   return (
     <>
-      <div className="flex flex-col justify-center h-30 items-center">
+      <div className="flex flex-col justify-center items-center border-2 border-blue-500 rounded-md">
         <h3 className="text-lg font-bold">{item.title}</h3>
         <img
           src={item.img}
@@ -12,7 +12,7 @@ const Item = ({ item }) => {
           className="object-scale-down h-48 w-96"
         ></img>
         <Link to={`/item/${item.id}`}>
-          <button className="m-auto p-2 border-2 border-blue-500 hover:border-red-500 rounded-md">
+          <button className="m-5 p-1 border-2 border-blue-500 hover:border-red-500 rounded-md">
             Ver detalles del producto
           </button>
         </Link>

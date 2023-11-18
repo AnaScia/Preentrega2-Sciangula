@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ItemCount from "./ItemCount";
+
 const ItemDetail = ({ item }) => {
   const onAdd = (quantity) => {
     console.log(quantity);
