@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
     fetchData();
   }, [idItem]);
 
-  return <>{item ? <ItemDetail item={item} /> : <p> Cargando..</p>}</>;
+  return <>{item ? <ItemDetail item={item} /> : <p className="flex justify-center text-xl font-bold text-blue-600"> Cargando..</p>}</>;
 };
 
 export default ItemDetailContainer;

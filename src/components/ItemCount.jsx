@@ -4,6 +4,7 @@ import logo2 from "../img/plus.svg";
 import PropTypes from "prop-types";
 
 function ItemCount({ stock, initial, onAdd }) {
+  
   const [count, setCount] = useState(initial);
 
   const increase = () => {

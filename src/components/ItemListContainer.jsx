@@ -17,7 +17,7 @@ function ItemListContainer() {
             .then((data) => {
               resolve(data);
             });
-        }, 2000);
+        }, 1000);
       });
     };
 
@@ -33,7 +33,7 @@ function ItemListContainer() {
   return (
     <>
       {items.length == 0 ? (
-        <p> Cargando..</p>
+        <p className="flex justify-center text-xl font-bold text-blue-600"> Cargando...</p>
       ) : (
         <ItemList items={items}></ItemList>
       )}
