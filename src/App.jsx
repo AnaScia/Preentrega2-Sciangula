@@ -6,8 +6,28 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import { CartProvider } from "./context/CartContext";
+// import{getFirestore,collection,getDocs} from "firebase/firestore"
+// import { useState,useEffect } from "react";
 
 function App() {
+
+  // const [product,setProduct]=useState(null)
+
+  // useEffect(() => {
+  //   const db= getFirestore()
+  
+  //   const collectionRef= collection(db,"products");
+
+  //   getDocs(collectionRef).then((snapshot)=>{
+     
+  //       setProduct(snapshot.docs.map((doc)=>(
+  //         {id:doc.id,...doc.data()}
+  //       )))
+  //   })
+  // }, []);
+
+  // console.log(product)
+
   return (
     <>
       <BrowserRouter>
