@@ -6,28 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import { CartProvider } from "./context/CartContext";
-// import{getFirestore,collection,getDocs} from "firebase/firestore"
-// import { useState,useEffect } from "react";
+import Checkout from "./components/Checkout";
 
 function App() {
-
-  // const [product,setProduct]=useState(null)
-
-  // useEffect(() => {
-  //   const db= getFirestore()
-  
-  //   const collectionRef= collection(db,"products");
-
-  //   getDocs(collectionRef).then((snapshot)=>{
-     
-  //       setProduct(snapshot.docs.map((doc)=>(
-  //         {id:doc.id,...doc.data()}
-  //       )))
-  //   })
-  // }, []);
-
-  // console.log(product)
-
   return (
     <>
       <BrowserRouter>
@@ -35,9 +16,13 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/:categoryId" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryId"
+              element={<ItemListContainer />}
+            />
             <Route path="/item/:idItem" element={<ItemDetailContainer />} />
-            <Route path="/Cart" element={<Cart></Cart>} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Checkout" element={<Checkout />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </CartProvider>

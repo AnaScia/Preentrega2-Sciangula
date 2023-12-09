@@ -16,6 +16,7 @@ const Item = ({ item }) => {
             Ver detalles del producto
           </button>
         </Link>
+        <p className="m-1 p-1 border-2">Stock disponible: {item.stock}</p>
       </div>
     </>
   );
@@ -28,7 +29,7 @@ Item.propTypes = {
     stock: PropTypes.number,
     price: PropTypes.number,
     description: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
 };
 
