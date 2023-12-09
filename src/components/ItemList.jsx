@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ItemList = ({ items }) => {
   return (
-    <div>
+    <div className="flex gap-2 justify-around m-10">
       {items.map((item) => {
         return <Item key={item.id} item={item} />;
       })}

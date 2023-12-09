@@ -21,7 +21,7 @@ function ItemCount({ stock, initial, onAdd }) {
   };
 
   return (
-    <div className="flex flex-row h-40 ">
+    <div className="flex flex-row h-40 gap-1">
       <div className="flex justify-around items-center m-auto p-2 bg-gray-200 border-2 border-blue-500 rounded-md">
         <button className="m-2" onClick={decrease}>
           <img src={logo1} className="h-4 "></img>
